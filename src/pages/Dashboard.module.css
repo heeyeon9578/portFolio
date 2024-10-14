@@ -54,9 +54,9 @@ button, div, span {
 
 .primaryBtn{
     margin-top: 10px;
-    margin-right: 20px;  /* 각 버튼 사이에 10px의 간격을 추가 */
+    margin-right: 40px;  /* 각 버튼 사이에 10px의 간격을 추가 */
     width: auto;
-    padding: 10px 20px;
+    padding: 10px 30px;
     height: 40px;
     background-color:var(--secondary-color);
     border: none;
