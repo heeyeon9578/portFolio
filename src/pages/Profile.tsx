@@ -3,6 +3,8 @@ import styles from './Profile.module.css';  // CSS Modules import
 import { useTranslation } from 'react-i18next';
 import devider from '../images/devider.png';
 import heeyeon from '../images/heeyeon.jpg'
+import 'animate.css';
+
 
 const Profile: React.FC = () => {
   const { t } = useTranslation();
@@ -20,11 +22,11 @@ const Profile: React.FC = () => {
                 <img src={heeyeon} alt="Profile"></img>
             </div>
             <div className={styles.paragraph}>
-            <span className={styles.sentence}>{t('profile_sentence_1')}</span>
-                <span className={styles.sentence}>{t('profile_sentence_2')}</span>
-                <span className={styles.sentence}>{t('profile_sentence_3')}</span>
-                <span className={styles.sentence}>{t('profile_sentence_4')}</span>
-                <span className={styles.sentence}>{t('profile_sentence_5')}</span>
+                <span className={`${styles.sentence} animate__animated animate__backInUp`}>{t('profile_sentence_1')}</span>
+                <span className={`${styles.sentence} animate__animated animate__backInUp`}>{t('profile_sentence_2')}</span>
+                <span className={`${styles.sentence} animate__animated animate__backInUp`}>{t('profile_sentence_3')}</span>
+                <span className={`${styles.sentence} animate__animated animate__backInUp`}>{t('profile_sentence_4')}</span>
+                <span className={`${styles.sentence} animate__animated animate__backInUp`}>{t('profile_sentence_5')}</span>
             </div>
         </div>
         
