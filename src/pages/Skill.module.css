@@ -25,17 +25,19 @@
 
 .secondaryBtn{
     margin-top: 10px;
-    margin-right: 40px;  /* 각 버튼 사이에 10px의 간격을 추가 */
-    width: 50%;
-    padding: 10px 30px;
-    height: 40px;
-    background-color:var(--secondary-color);
+    margin-right: 20px;  /* 각 버튼 사이에 10px의 간격을 추가 */
+    padding: 10px;
+    background-color:transparent;
     border: none;
-    border-radius:20px;
+    border-radius:100%;
     color: var(--text-color);
     filter: drop-shadow(0px 4px 48px var(--secondary-color));
     font-size: 20px; 
     transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out; /* 애니메이션 속성 추가 */
+}
+.icon{
+    width: auto;
+    height: 50px;
 }
 .activeSecondBtn{
     color: var(--background-color);
@@ -51,7 +53,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 700px;
+    min-height: 500px;
+    max-width: 1000px;
+    flex-wrap: wrap;
 }
 
 .project{
@@ -86,10 +90,12 @@
 }
 
 .detail{
-    width: 400px;
-    height: 513px;
+    width: 300px;
+    height: 342px;
+    margin-right: 10px;
+    margin-top: 10px;
     background-color: var(--background-color);
-    border: 7px solid var(--secondary-color);
+    border: 4px solid var(--secondary-color);
     box-shadow: 0px 4px 48px var(--secondary-color);
     border-radius: 23px;
     overflow: hidden;
@@ -100,8 +106,8 @@
 
 .projectDetail{
     margin-top: 20px;
-    width: 350px;
-    height: 200px;
+    width: 250px;
+    height: 150px;
     border: 3px solid var(--secondary-color);
     overflow: hidden;
 

@@ -22,11 +22,11 @@ const Profile: React.FC = () => {
                 <img src={heeyeon} alt="Profile"></img>
             </div>
             <div className={styles.paragraph}>
-                <span className={`${styles.sentence} animate__animated animate__backInUp`}>{t('profile_sentence_1')}</span>
-                <span className={`${styles.sentence} animate__animated animate__backInUp`}>{t('profile_sentence_2')}</span>
-                <span className={`${styles.sentence} animate__animated animate__backInUp`}>{t('profile_sentence_3')}</span>
-                <span className={`${styles.sentence} animate__animated animate__backInUp`}>{t('profile_sentence_4')}</span>
-                <span className={`${styles.sentence} animate__animated animate__backInUp`}>{t('profile_sentence_5')}</span>
+                <span className={`${styles.sentence} animate__animated animate__fadeIn`}>{t('profile_sentence_1')}</span>
+                <span className={`${styles.sentence} animate__animated animate__fadeIn`}>{t('profile_sentence_2')}</span>
+                <span className={`${styles.sentence} animate__animated animate__fadeIn`}>{t('profile_sentence_3')}</span>
+                <span className={`${styles.sentence} animate__animated animate__fadeIn`}>{t('profile_sentence_4')}</span>
+                <span className={`${styles.sentence} animate__animated animate__fadeIn`}>{t('profile_sentence_5')}</span>
             </div>
         </div>
         

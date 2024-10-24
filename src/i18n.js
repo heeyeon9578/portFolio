@@ -23,8 +23,16 @@ i18n
             "profile_sentence_2": "While working at ‘Jenosoft’, I was introduced to frontend tasks by chance, and this sparked a deeper interest in frontend development, leading me to start self-study.",
             "profile_sentence_3": "I learned frontend technologies such as JavaScript, TypeScript, and React, and gained project experience by collaborating with a backend engineer on a 'blog' project.",
             "profile_sentence_4": "In addition, I conducted an 8-month-long study group based on the book 'JavaScript Deep Dive' to gain a deeper understanding of JavaScript. By recruiting and learning together with study members, I was able to solidify my foundation in JavaScript.",
-            "profile_sentence_5": "With the knowledge and skills I acquired through these projects and studies, I aim to contribute to real-world projects in the industry."
-}
+            "profile_sentence_5": "With the knowledge and skills I acquired through these projects and studies, I aim to contribute to real-world projects in the industry.",
+             "web": "web",
+            "game":"game",
+            "blogDetail": "This is a user-centered blog platform designed to allow people to share thoughts and stories through comments and posts, while easily managing user profiles and posts.",
+            "geugol": "GeuGol",
+            "geugolDetail": "This is a platform where users can add various options or people through the app and randomly assign rankings. Battles are conducted randomly, reducing HP, and the result screen can be viewed on the web",
+            "portFolio":"PortFolio",
+            "portFolioDetail":"This website introduces Heeyeon Choi, showcasing her career, skills, certifications, and portfolio. Users can send an email directly, and the site also supports themes and multiple languages.",
+            "helloGachonDetail":"This is a nurturing and story guide game designed for freshmen in Computer Science at Gachon University. It was developed to help students from the COVID era, who had difficulty accessing departmental information and participating in various events.",
+          }
         
       },
       ko: {
@@ -42,8 +50,16 @@ i18n
             "profile_sentence_2": "‘제노소프트’에서 근무하던 중 우연한 기회로 프론트엔드 업무를 접하게 되었고, 그 이후로 프론트엔드에 대한 관심이 깊어져 독학을 시작하게 되었습니다.",
             "profile_sentence_3": "자바스크립트, 타입스크립트, React 등 프론트엔드에 필요한 기술들을 습득했으며, 백엔드 담당자와 함께 '블로그' 프로젝트를 진행하며 프로젝트 경험을 쌓았습니다.",
             "profile_sentence_4": "또한, 자바스크립트의 깊은 이해를 위해 ‘자바스크립트 딥다이브’라는 책을 기반으로 약 8개월간 스터디를 진행했습니다. 스터디원들을 직접 모집하여 함께 학습하면서 자바스크립트의 기초를 확실히 다질 수 있었습니다.",
-            "profile_sentence_5": "이러한 프로젝트 경험과 스터디를 통해 습득한 지식과 기술을 바탕으로, 현업에서 실제 프로젝트에 기여하고자 합니다."
-        }
+            "profile_sentence_5": "이러한 프로젝트 경험과 스터디를 통해 습득한 지식과 기술을 바탕으로, 현업에서 실제 프로젝트에 기여하고자 합니다.",
+            "web": "웹",
+            "game":"게임",
+            "blogDetail":"사람들이 댓글과 게시글을 통해 생각과 이야기를 나누고, 사용자 프로필 및 게시글을 손쉽게 관리할 수 있도록 설계된 사용자 중심의 블로그 플랫폼입니다.",
+            "geugol": "그쪽이 골라주세요",
+            "geugolDetail": "사용자가 앱을 통해서 다양한 선택지 혹은 사람들을 추가하고 등수를 랜덤으로 매겨주는 플랫폼입니다. 랜덤으로 전투를 진행하여 hp가 깎이고, 결과화면을 웹으로 확인할 수 있습니다.",
+            "portFolio":"포트폴리오",
+            "portFolioDetail":"최희연을 소개하고, 경력 / 스킬 / 자격증 / 포트폴리오를 웹으로 확인할 수 있습니다. 이메일을 바로 전송할 수도 있습니다. 또한, 테마와 다국어도 지원합니다.",
+            "helloGachonDetail":"가천대 컴공 신입생들을 위한 육성 및 스토리 가이드 게임 입니다. 코로나 학번들은 학과 정보 습득이 어렵고, 각종 행사를 참여 못하기 때문에 개발하게 되었습니다.",
+          }
       }
     },
     fallbackLng: "en",

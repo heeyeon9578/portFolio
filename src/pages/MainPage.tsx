@@ -16,7 +16,7 @@ const MainPage: React.FC<MainPageProps> = ({ scrollTo }) => {
       <div className={styles.btns}>
         <button className={styles.primaryBtn} onClick={()=>scrollTo('profile')}>{t('profile')}</button>
         <button className={styles.primaryBtn} onClick={()=>scrollTo('projects')}>{t('projects')}</button>
-        <button className={styles.primaryBtn} >{t('skills')}</button>
+        <button className={styles.primaryBtn} onClick={()=>scrollTo('skill')}>{t('skills')}</button>
         <button className={styles.primaryBtn}>{t('certifications')}</button>
         <button className={styles.primaryBtn}>{t('experience')}</button>
         <button className={styles.primaryBtn}>{t('email')}</button>

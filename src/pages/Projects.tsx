@@ -8,32 +8,60 @@ import geugol from '../images/geugol.png';
 import dashBoard from '../images/dashboardPage.png';
 import portFolioImg from '../images/portFolioImg.png';
 import geuGolImg from '../images/geugolImg.png';
+import helloGachonImg from '../images/helloGachon.png';
+import helloGachonMarkImg from '../images/helloGachonMark.png';
 import github from '../images/github.png';
 import notion from '../images/notion.png';
+import 'animate.css';
 
 const Projects: React.FC = () => {
   const { t } = useTranslation();
   const blogPj = 'blogProject';
   const geugolPj = 'geugol';
   const portFolio = 'portFolio';
-  const [project, setProject] = useState(blogPj);
+  const helloGachon ='printf(”helloGachon!”)';
+  const web = t('web');  // 웹 부분의 번역 추가
+  const game = t('game');    // 게임 부분의 번역 추가
 
-  const changeProject = (project: string) =>{
-    setProject(project);
-    console.log(project);
+  const [project, setProject] = useState(blogPj);
+  const [kind, setKind] = useState(web);
+  const [selectedProject, setSelectedProject] = useState(blogPj); // 클릭된 프로젝트 상태 관리
+  const [animationClass, setAnimationClass] = useState('animate__fadeIn');
+
+  const changeProject = (project: string) => {
+    setAnimationClass(''); // 애니메이션 리셋
+    setSelectedProject(project); // 클릭 시 프로젝트 상태 업데이트
+    setTimeout(() => {
+      setProject(project); // 프로젝트 변경
+      setAnimationClass('animate__fadeIn'); // 애니메이션 다시 추가
+    }, 0);
+  };
+  
+  const changeKind = (whatKind: string) => {
+    setKind(whatKind);
+    
+    if(whatKind === web) {
+      setProject(blogPj); 
+      setSelectedProject(blogPj); // 클릭 시 프로젝트 상태 업데이트
+    }
+    if(whatKind === game) {
+      setProject(helloGachon); 
+      setSelectedProject(helloGachon); // 클릭 시 프로젝트 상태 업데이트
+    }
   };
 
   const goToBlog = () => {
     window.open('https://mk-blogservice.site/', '_blank');
-  }
+  };
 
   const goToGeugol = () => {
     window.open('http://geugol.site/link/9cvefH', '_blank');
-  }
+  };
 
   const goToPortFolio = () => {
     window.open('https://heeyeon-portfolio.netlify.app/', '_blank');
-  }
+  };
+
   // 새로운 창에서 GitHub 페이지 열기
   const goToGithub = (whatKind : string) => {
 
@@ -47,12 +75,15 @@ const Projects: React.FC = () => {
       case portFolio:
         window.open(`https://github.com/heeyeon9578/portFolio`, '_blank');
         break;
+      case helloGachon:
+        window.open(`https://github.com/heeyeon9578/HelloGachon`, '_blank');
+        break;
       default:
         window.open(`https://github.com/heeyeon9578/`, '_blank');
         break;
     }
     
-  }
+  };
   // 새로운 창에서 Notion 페이지 열기
   const goToNotion = (whatKind : string) => {
     
@@ -66,11 +97,14 @@ const Projects: React.FC = () => {
       case portFolio:
         window.open(`https://heeyeon9578.notion.site/52ff5a864dd7461c883070626b058283?pvs=4`, '_blank');
         break;
+      case helloGachon:
+        window.open(`https://heeyeon9578.notion.site/printf-helloGachon-e14f9740ae474faf99c12aa9c8e35cdb?pvs=4`, '_blank');
+        break;
       default:
         window.open(`http://heeyeon9578.notion.site/`, '_blank');
         break;
     }
-  }
+  };
 
   return (
     <div className={styles.profilePage}>
@@ -81,32 +115,33 @@ const Projects: React.FC = () => {
         </div>
 
         <div className={styles.buttons}>
-          <button className={styles.secondaryBtn}>웹</button>
-          <button className={styles.secondaryBtn}>게임</button>
+          <button className={`${styles.secondaryBtn} ${kind === web ? styles.activeSecondBtn : ''}`} onClick={()=>changeKind(web)}>{t('web')} </button>
+          <button className={`${styles.secondaryBtn} ${kind === game ? styles.activeSecondBtn : ''}`}  onClick={()=>changeKind(game)}>{t('game')}</button>
         </div>
         
-        <div className={styles.projectAndDetail}>
+       {kind === web && <div className={styles.projectAndDetail}>
 
           <div className={styles.projects}>
-            <div className={styles.project} onClick={()=>changeProject(blogPj)}>
+            <div className={`${styles.project} ${selectedProject === blogPj ? styles.active : ''}`} onClick={()=>changeProject(blogPj)}>
               <img src={blogProject} alt='blog-project' className={styles.projectImg}></img>
             </div>
-            <div className={styles.project} onClick={()=>changeProject(geugolPj)}>
+            <div className={`${styles.project} ${selectedProject === geugolPj ? styles.active : ''}`} onClick={()=>changeProject(geugolPj)}>
               <img src={geugol} alt='geugol-project' className={styles.projectImg}></img>
             </div>
-            <div className={styles.project} onClick={()=>changeProject(portFolio)}>
+            <div className={`${styles.project} ${selectedProject === portFolio ? styles.active : ''}`} onClick={()=>changeProject(portFolio)}>
               <img src={profileImg} alt='profileImg-project' className={styles.projectImg}></img>
             </div>            
           </div>
 
-          <div className={styles.detail}>
+          <div className={`${styles.detail} animate__animated ${animationClass}`}>
+
             {project === blogPj &&(
                 <div className={styles.detailAll}>
 
                   <div className={styles.imgAndName}>
-                    <img src={dashBoard} className={styles.projectDetail} onClick={goToBlog}></img>
+                    <img src={dashBoard} className={styles.projectDetail} onClick={goToBlog} alt='blog'></img>
                     <span className={styles.blog} onClick={goToBlog}>MK-Blog</span>
-                    <span className={styles.blogDetail}>사람들이 댓글과 게시글을 통해 생각과 이야기를 나누고, 사용자 프로필 및 게시글을 손쉽게 관리할 수 있도록 설계된 사용자 중심의 블로그 플랫폼입니다.</span>
+                    <span className={styles.blogDetail}>{t('blogDetail')}</span>
                   </div>
 
                   <div className={styles.gitAndNotion}>
@@ -125,9 +160,9 @@ const Projects: React.FC = () => {
               <div className={styles.detailAll}>
 
               <div className={styles.imgAndName}>
-                <img src={geuGolImg} className={styles.projectDetail} onClick={goToGeugol}></img>
-                <span className={styles.blog} onClick={goToGeugol}>그쪽이 골라주세요</span>
-                <span className={styles.blogDetail}>사람들이 댓글과 게시글을 통해 생각과 이야기를 나누고, 사용자 프로필 및 게시글을 손쉽게 관리할 수 있도록 설계된 사용자 중심의 블로그 플랫폼입니다.</span>
+                <img src={geuGolImg} className={styles.projectDetail} onClick={goToGeugol}  alt='geugol'></img>
+                <span className={styles.blog} onClick={goToGeugol}>{t('geugol')}</span>
+                <span className={styles.blogDetail}>{t('geugolDetail')}</span>
               </div>
 
               <div className={styles.gitAndNotion}>
@@ -146,9 +181,9 @@ const Projects: React.FC = () => {
              <div className={styles.detailAll}>
 
              <div className={styles.imgAndName}>
-               <img src={portFolioImg} className={styles.projectDetail} onClick={goToPortFolio}></img>
-               <span className={styles.blog} onClick={goToPortFolio}>포트폴리오</span>
-               <span className={styles.blogDetail}>사람들이 댓글과 게시글을 통해 생각과 이야기를 나누고, 사용자 프로필 및 게시글을 손쉽게 관리할 수 있도록 설계된 사용자 중심의 블로그 플랫폼입니다.</span>
+               <img src={portFolioImg} className={styles.projectDetail} onClick={goToPortFolio} alt='portFolio'></img>
+               <span className={styles.blog} onClick={goToPortFolio}>{t('portFolio')}</span>
+               <span className={styles.blogDetail}>{t('portFolioDetail')}</span>
              </div>
 
              <div className={styles.gitAndNotion}>
@@ -165,9 +200,42 @@ const Projects: React.FC = () => {
 
 
           </div>
-        </div>
+        </div>}
         
+        {kind === game && <div className={styles.projectAndDetail}>
 
+          <div className={styles.projects}>
+            <div className={`${styles.project} ${selectedProject === helloGachon ? styles.active : ''}`} onClick={()=>changeProject(helloGachon)}>
+              <img src={helloGachonMarkImg} alt='helloGachon' className={styles.projectImg}></img>
+            </div>
+                  
+          </div>
+
+          <div className={`${styles.detail} animate__animated ${animationClass}`}>
+
+            {project === helloGachon &&(
+                <div className={styles.detailAll}>
+
+                  <div className={styles.imgAndName}>
+                    <img src={helloGachonImg} className={styles.projectDetail} alt='helloGachon'></img>
+                    <span className={styles.blog} >{helloGachon}</span>
+                    <span className={styles.blogDetail}>{t('helloGachonDetail')}</span>
+                  </div>
+
+                  <div className={styles.gitAndNotion}>
+                    <div className={styles.circle} onClick={()=>goToGithub(project)}>
+                      <img src={github} className={styles.github} alt='github'></img>
+                    </div>
+                    <div className={styles.circle} onClick={()=>goToNotion(project)}>
+                      <img src={notion} className={styles.github} alt='notion'></img>
+                    </div>
+                  </div>
+                  
+                </div>
+            )}
+
+          </div>
+        </div>}
     </div>  
   );
 };
